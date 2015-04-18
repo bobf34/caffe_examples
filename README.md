@@ -5,9 +5,11 @@ category: example
 
 # Background
 
-Because of change in caffe, many of the available examples on the web don't seem to work.   
+Because of recent change in caffe, it seems that many of the available examples on the web don't seem to work.  The interfaces have change and what documentation there is, is often out of date.
 
-Here you will find examples that, at least for a short while, should work.
+The examples here leverage, repair and extend the work of others and work with the master branch of caffe (as available April 2015).  I hope they will save you both time and frustration.
+
+_Bob_
 
 # Examples 
 
@@ -15,7 +17,14 @@ Here you will find examples that, at least for a short while, should work.
 
 This example builds on the cifar10 example included with [caffe](https://github.com/BVLC/caffe).  You need to get this example working before using this script as it uses the training data.
 
-The script reports the same accuracy as the cifar10 example.  It also generates a confusion matrix (reported in %), and plots the filters for the first convolution layer.  The confusion matrix shows the difficulty that the net had in distinguishing dog and cats.
+This python script may help you if:
+* You want to feed caffe an image in memory 
+* You want to read data from an lmdb database
+* You want to view the network filters
+* You want plots from caffe that look similar to the ones in published papers
+
+
+The script reports the same accuracy as the cifar10 example.  It also generates a confusion matrix (reported in %), and plots the filters for the first convolution layer.  The confusion matrix shows the difficulty that the net had in distinguishing dog and cats.  (Sorry about the label formating across the top!)
 
 ```
 processed 1000
@@ -46,8 +55,8 @@ Total Accuracy: 82.0%
 ![alt text](https://github.com/bobf34/caffe_examples/blob/master/screenshots/caffeConv1Filters.png "conv1 filters")
 
 
-When enabled, this program can also show images with correct and/or incorrect classifications as shown here.
+When enabled, this program can also show images with correct and/or incorrect classifications as shown here.  The correct and incorrect classes are show at the top, and the top 5 classes are displayed as in bargraph form at the bottom.
 
 ![alt text](https://github.com/bobf34/caffe_examples/blob/master/screenshots/caffeWrongClass.png "Image with wrong classification")
 
- 
+
