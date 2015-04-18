@@ -17,7 +17,7 @@ This example builds on the cifar10 example included with [caffe](https://github.
 
 The script reports the same accuracy as the cifar10 example.  It also generates a confusion matrix (reported in %), and plots the filters for the first convolution layer.  The confusion matrix shows the difficulty that the net had in distinguishing dog and cats.
 
-'''
+```
 processed 1000
 processed 2000
 processed 3000
@@ -41,7 +41,7 @@ Total Accuracy: 82.0%
 [  1.    0.4   1.8   2.9   3.    4.1   0.6  85.6   0.1   0.5] horse
 [  4.4   1.5   0.5   1.    0.6   0.4   0.2   0.3  89.1   2. ] ship
 [  2.1   3.7   0.5   0.6   0.2   0.3   0.2   0.5   1.9  90. ] truck
-'''
+```
 
 ![alt text](https://github.com/bobf34/caffe_examples/blob/master/screenshots/caffeConv1Filters.png "conv1 filters")
 
