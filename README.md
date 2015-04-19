@@ -5,9 +5,9 @@ category: example
 
 # Background
 
-Because of ongoing development in [caffe](https://github.com/BVLC/caffe), it seems that many of the available examples on the web no longer work; some never did. Working, or not, these examples have provided some useful clues as to how to use caffe along with a number of dead-ends!
+Because of ongoing development in [caffe](https://github.com/BVLC/caffe), it seems that many of the available examples on the web no longer work; some never did. Working or not, these examples have provided some useful clues as to how to use caffe along with a number of dead-ends!
 
-The two examples here leverage, one in python, the other in c++, combine, repair and extend the work of others. They are compatible with the master branch of caffe (as available April 2015).  I hope they will save you both time and frustration, and when they break, which I'm sure they will, that they'll at least serve as a newer broken examples.
+The two examples here, one in python, the other in c++, leverage, combine, repair and extend the work of others. They are compatible with the master branch of caffe (as available April 2015).  I hope they will save you both time and frustration, and when they break, which I'm sure they will, that they'll at least serve as a newer broken examples.
 
 _Bob_
 
@@ -77,7 +77,7 @@ If you used my testImage.png file ![alt text](testImage.png "32x32 pixel image o
 Time taken: 2.22208 ms
 
     airplane : 0.000
-  automobile : 0.034
+  automobile : 0.034l
         bird : 0.000
          cat : 0.000
         deer : 0.000
