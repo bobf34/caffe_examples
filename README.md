@@ -71,22 +71,23 @@ This program reads a single 32x32 pixel image from a file called testImage.png. 
 
 The easiest way to compile and run the program is to put the cpp file into the caffe/tools directory and place the testImage.png file (included) in the caffe root directory.  Then, from the caffe root directory, type 'make'.  To run the program type './build/tools/inMemCifar10'
 
-If you used my testImage.png file ![alt text](testImage.png "32x32 pixel image of a boat"), you should see something like this in the console output indicating a 75% probability of this being an image of a ship.
+If you used my testImage.png file ![alt text](testImage.png "32x32 pixel image of a boat"), you should see something like this in the console output indicating a 94% probability of this being an image of a ship.
 
 ```
-Time taken: 1.99270 ms
+Time taken: 2.22208 ms
 
     airplane : 0.000
-  automobile : 0.076
-        bird : 0.001
+  automobile : 0.034
+        bird : 0.000
          cat : 0.000
         deer : 0.000
          dog : 0.000
-        frog : 0.002
-       horse : 0.003
-        ship : 0.751
-       truck : 0.166
+        frog : 0.000
+       horse : 0.000
+        ship : 0.941
+       truck : 0.024
 Classified as: ship
+
 ```
 
 
