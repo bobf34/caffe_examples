@@ -5,9 +5,9 @@ category: example
 
 # Background
 
-Because of recent change in caffe, it seems that many of the available examples on the web don't seem to work.  The interfaces have change and what documentation there is, is often out of date.
+Because of ongoing development in [caffe](https://github.com/BVLC/caffe), it seems that many of the available examples on the web no longer work; some never did. Working, or not, these examples have provided some useful clues as to how to use caffe along with a number of dead-ends!
 
-The examples here leverage, repair and extend the work of others and work with the master branch of caffe (as available April 2015).  I hope they will save you both time and frustration.
+The two examples here leverage, one in python, the other in c++, combine, repair and extend the work of others. They are compatible with the master branch of caffe (as available April 2015).  I hope they will save you both time and frustration, and when they break, which I'm sure they will, that they'll at least serve as a newer broken examples.
 
 _Bob_
 
@@ -17,6 +17,8 @@ _Bob_
 
 This example builds on the cifar10 example included with [caffe](https://github.com/BVLC/caffe).  You need to get this example working before using this script as it uses the training data.
 
+**Note:**  The script is set up to use a GPU, you'll need to edit the script if you haven't compiled caffe with GPU support, or you don't have a GPU.
+
 This python script may help you if:
 * You want to feed caffe an image in memory 
 * You want to read data from an lmdb database
@@ -24,7 +26,9 @@ This python script may help you if:
 * You want plots from caffe that look similar to the ones in published papers
 
 
-The script reports the same accuracy as the cifar10 example.  It also generates a confusion matrix (reported in %), and plots the filters for the first convolution layer.  The confusion matrix shows the difficulty that the net had in distinguishing dog and cats.  (Sorry about the label formating across the top!)
+The script reports the same accuracies as the cifar10 examples (e.g. train_full.sh).  It also generates a confusion matrix, reported in percent, After running a full test, it then also plots the filters for the first convolution layer.  
+
+The confusion matrix indicates that the net had in distinguishing dog and cats.  If you haven't looked at a confusion matrix before, the table below indicates that 5.2% of the bird images were classified as airplanes that 3.4% of the airplanes were classified as birds. (Sorry about the label formating across the top!)
 
 ```
 processed 1000
@@ -58,5 +62,33 @@ Total Accuracy: 82.0%
 When enabled, this program can also show images with correct and/or incorrect classifications as shown here.  The correct and incorrect classes are show at the top, and the top 5 classes are displayed as in bargraph form at the bottom.
 
 ![alt text](https://github.com/bobf34/caffe_examples/blob/master/screenshots/caffeWrongClass.png "Image with wrong classification")
+
+##inMemCifar10.cpp
+
+This program reads a single 32x32 pixel image from a file called testImage.png. From memory, it is then passed to the data layer (type: "MemoryData), where it is then processed using the cifar10 quick training data.   The MemoryData layer wasn't used in the cifar10 example, so a new prototxt file is inlcuded.  The cifar10_memory.prototxt file should be placed in the examples/cifar10/ directory.
+
+**Note:**  The program is set up to use a GPU, you'll need to edit the program if you haven't compiled caffe with GPU support, or you don't have a GPU.  The 2ms run time shown below was made using a GTX 780.  It's about 5x faster than runnin on my CPU.
+
+The easiest way to compile and run the program is to put the cpp file into the caffe/tools directory and place the testImage.png file (included) in the caffe root directory.  Then, from the caffe root directory, type 'make'.  To run the program type './build/tools/inMemCifar10'
+
+If you used my testImage.png file ![alt text](testImage.png "32x32 pixel image of a boat"), you should see something like this in the console output indicating a 75% probability of this being an image of a ship.
+
+```
+Time taken: 1.99270 ms
+
+    airplane : 0.000
+  automobile : 0.076
+        bird : 0.001
+         cat : 0.000
+        deer : 0.000
+         dog : 0.000
+        frog : 0.002
+       horse : 0.003
+        ship : 0.751
+       truck : 0.166
+Classified as: ship
+```
+
+
 
 
